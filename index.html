@@ -55,6 +55,11 @@
             dd { 
                 margin-left: 16px 
             }
+
+						.test-img {
+							position: relative;
+							top: 900px;
+						}
         </style>
     </head>
     <body>
@@ -175,9 +180,12 @@
                 </div>
             </details>
             <hr>
-        </template>
+				</template>
+				<hr>
+		    <img class="test-img" is="img-lazy" lazy="https://i.picsum.photos/id/866/200/300.jpg" dummy="https://i.picsum.photos/id/513/200/300.jpg?blur=5" alt="my-image"/>
         <script src="popupInfo.js"></script>
         <script src="customisedUL.js"></script>
         <script src="templateDetails.js"></script>
+        <script src="customisedImg.js"></script>
     </body>
 </html>
