@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>WebComponent</title>
+      <!-- if adding custom element def in head add defer to script, it should first let the DOM to parse-->
+      <!-- <script src="./comp.js" defer></script> -->
+      <!--else add it to the bottom of body tag-->
+      <!-- https://medium.com/@ishantoberoi/web-components-ca2b6727faad?sk=fb4867605bbf953e4190325d9ed0dcd3 -->
+      <!-- https://medium.com/@ishantoberoi/web-components-ca2b6727faad -->
+    </head>
+    <body>
+      <code-snippet>
+        <span slot="language">JavaScript</span>
+        <code slot="code">new Date()</code>
+      </code-snippet>
+      <template id="code-snippet">
+        <style>
+         div {
+            border: 1px dotted gray;
+         }
+         p {
+            margin: 0;
+            padding: 0; 
+          }
+         span {
+          font-weight: bold;
+          color: blue;   
+         }
+         </style>
+         <div>
+          <p>
+           <span><slot name="language">language used</slot></span>
+          </p>
+          <p>
+           <slot name="code">code snippet</slot>
+          </p>
+        </div>
+      </template>
+      <script src="code-snippet.js"></script>
+    </body>
+</html>
