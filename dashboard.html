@@ -23,21 +23,13 @@
         #dashboard-list .item img {
           min-width: 200px;
           min-height: 300px;
-        } 
-
-        img {
-          opacity: 0.7;
-        }
-
-        img.loaded {
-          opacity: 1;
-        }        
+        }     
       </style>
     </head>
     <body>
       <div id="dashboard">
         <ul id="dashboard-list">
-          <li class="item"><img 
+          <!-- <li class="item"><img 
             is="img-lazy" 
             lazy="https://i.picsum.photos/id/201/200/300.jpg" 
             dummy="https://i.picsum.photos/id/201/20/30.jpg?blur=5&grayscale" 
@@ -56,25 +48,28 @@
             is="img-lazy" 
             lazy="https://i.picsum.photos/id/204/200/300.jpg" 
             dummy="https://i.picsum.photos/id/204/20/30.jpg?blur=5" 
-            alt="my-image"/></li> 
+            alt="my-image"/></li>  -->
         </ul>
+        <img src="https://dummyimage.com/50X50/000/fff&text=img-lazy" width="200" height="200" />
       </div>
-			<!-- <img class="test-img" is="img-lazy" lazy="https://i.picsum.photos/id/866/200/300.jpg" dummy="https://i.picsum.photos/id/513/200/300.jpg?blur=5" alt="my-image"/> -->
+    	<!-- <img class="test-img" is="img-lazy" lazy="https://i.picsum.photos/id/866/200/300.jpg" dummy="https://i.picsum.photos/id/513/200/300.jpg?blur=5" alt="my-image"/> -->
       <script src="customisedImg.js"></script>
       <script>
         document.addEventListener('DOMContentLoaded', function (evt) {
-            window.requestIdleCallback(loadImages);                                                                                                                                                                                     
+          window.requestIdleCallback(loadImages);                                                                                                                                                                                     
         });
 
         function loadImages() {
           let listItems =  '';
           [...(Array(30).keys())].forEach((item, index) => {
-          listItems += `<li class="item"><img 
-            is="img-lazy" 
-            class="my-image"
-            dummy="https://i.picsum.photos/id/513/200/300.jpg?blur=5"
-            lazy="https://i.picsum.photos/id/${parseInt(100+index)}/200/300.jpg" 
-            alt="my-image"/></li>`
+          listItems += `<li class="item">
+            <img 
+              is="img-lazy" 
+              class="my-image"
+              dummy="https://i.picsum.photos/id/${parseInt(600+index)}/20/30.jpg?blur=3"
+              lazy="https://i.picsum.photos/id/${parseInt(600+index)}/200/300.jpg" 
+              alt="my-image"/>
+            </li>`
           });
           document.getElementById('dashboard-list').innerHTML =listItems;
         }

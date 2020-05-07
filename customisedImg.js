@@ -9,7 +9,8 @@ class LazyImg extends HTMLImageElement {
       rootMargin: '0px',
       threshold: [0.50]
     };
-    const dummyUrl = self.getAttribute('dummy') || 'https://dummyimage.com/200x300/000/fff';
+    
+    const dummyUrl = self.getAttribute('dummy') || 'https://dummyimage.com/200X200/000/fff&text=img-lazy';
     self.setAttribute('src', dummyUrl);
     const observer = new IntersectionObserver(self.handleCallback.bind(self), options);
     observer.observe(self);
@@ -28,7 +29,7 @@ class LazyImg extends HTMLImageElement {
 
   loadImage(target, lazy) {
     target.setAttribute('src', lazy);
-    target.setAttribute('class', `${target.getAttribute('class')} loaded`)
+    target.setAttribute('class', `${target.getAttribute('class')} loaded`);
   }
 }
 
