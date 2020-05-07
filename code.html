@@ -11,12 +11,14 @@
     <body>
       <code-snippet>
         <span slot="language">JavaScript</span>
-        <code slot="code">new Date()</code>
+        <span slot="code">new Date()</span>
       </code-snippet>
       <template id="code-snippet">
         <style>
          div {
-            border: 1px dotted gray;
+            border: 1px dotted #867f7f;
+            background-color: #efefef;
+            padding: 5px;
          }
          p {
             margin: 0;
@@ -32,7 +34,7 @@
            <span><slot name="language">language used</slot></span>
           </p>
           <p>
-           <slot name="code">code snippet</slot>
+            <code><slot name="code">code snippet</slot></code>
           </p>
         </div>
       </template>
