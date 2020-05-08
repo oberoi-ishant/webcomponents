@@ -12,7 +12,13 @@
       <h2>Web Component - Code Snippet</h2>
       <code-snippet>
         <span slot="language">JavaScript</span>
+        <span slot="description">Date function</span>
         <span slot="code">new Date()</span>
+      </code-snippet>
+      <code-snippet>
+        <span slot="language">PHP</span>
+        <span slot="description">Date function</span>
+        <span slot="code">date("Y/m/d")</span>
       </code-snippet>
       <template id="code-snippet">
         <style>
@@ -21,20 +27,24 @@
             background-color: #efefef;
             padding: 5px;
             text-align: center;
+            margin-top: 10px;
          }
          p {
             margin: 0;
-            padding: 0; 
+            padding: 0;
           }
-         span {
+         strong {
           font-weight: bold;
-          color: blue;   
+          color: blue;
          }
          </style>
          <div>
           <p>
-           <span><slot name="language">language used</slot></span>
+           <strong><slot name="language">language</slot></strong>
           </p>
+          <p>
+            <em><slot name="description">function description</slot></em>
+           </p>
           <p>
             <code><slot name="code">code snippet</slot></code>
           </p>
