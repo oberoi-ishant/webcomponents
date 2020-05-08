@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Customised-img</title>
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- if adding custom element def in head add defer to script, it should first let the DOM to parse-->
-        <!-- <script src="./comp.js" defer></script> -->
-        <!--else add it to the bottom of body tag-->
-      <style>
-        #dashboard-list {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-around;
-          list-style: none;
-        }
+  <head>
+      <title>Customised-img</title>
+      <meta charset="UTF-8"> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #dashboard-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        list-style: none;
+      }
 
-        #dashboard-list .item {
-          margin-top: 300px;
-          display: block;
-        }
+      #dashboard-list .item {
+        margin-top: 200px;
+        display: block;
+      }
 
-        #dashboard-list .item img {
-          min-width: 200px;
-          min-height: 300px;
-        }     
-      </style>
-    </head>
-    <body>
-      <div id="dashboard">
-        <ul id="dashboard-list">
-          <!-- <li class="item"><img 
-            is="img-lazy" 
-            lazy="https://i.picsum.photos/id/201/200/300.jpg" 
-            dummy="https://i.picsum.photos/id/201/20/30.jpg?blur=5&grayscale" 
-            alt="my-image"/></li>
-          <li class="item"><img 
-            is="img-lazy" 
-            lazy="https://i.picsum.photos/id/202/200/300.jpg" 
-            dummy="https://i.picsum.photos/id/202/20/30.jpg?blur=5" 
-            alt="my-image"/></li>
-          <li class="item"><img 
-            is="img-lazy" 
-            lazy="https://i.picsum.photos/id/203/200/300.jpg" 
-            dummy="https://i.picsum.photos/id/203/20/30.jpg?blur=5" 
-            alt="my-image"/></li>
-          <li class="item"><img 
-            is="img-lazy" 
-            lazy="https://i.picsum.photos/id/204/200/300.jpg" 
-            dummy="https://i.picsum.photos/id/204/20/30.jpg?blur=5" 
-            alt="my-image"/></li>  -->
-        </ul>
-        <img src="https://dummyimage.com/50X50/000/fff&text=img-lazy" width="200" height="200" />
-      </div>
-    	<!-- <img class="test-img" is="img-lazy" lazy="https://i.picsum.photos/id/866/200/300.jpg" dummy="https://i.picsum.photos/id/513/200/300.jpg?blur=5" alt="my-image"/> -->
-      <script src="customisedImg.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function (evt) {
-          window.requestIdleCallback(loadImages);                                                                                                                                                                                     
-        });
+      #dashboard-list .item img {
+        min-width: 200px;
+        min-height: 300px;
+      }     
+    </style>
+  </head>
+  <body>
+    <div id="dashboard">
+      <ul id="dashboard-list"></ul>
+    </div>
+    <script src="customised-img.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function (evt) {
+        loadImages();
+      });
 
-        function loadImages() {
-          let listItems =  '';
-          [...(Array(30).keys())].forEach((item, index) => {
-          listItems += `<li class="item">
+      function loadImages() {
+        let listItems =  '';
+        [...(Array(30).keys())].forEach((item, index) => {
+        listItems += `
+          <li class="item">
             <img 
-              is="img-lazy" 
+              is="lazy-img" 
               class="my-image"
-              dummy="https://i.picsum.photos/id/${parseInt(600+index)}/20/30.jpg?blur=3"
-              lazy="https://i.picsum.photos/id/${parseInt(600+index)}/200/300.jpg" 
+              src="https://i.picsum.photos/id/${parseInt(600+index)}/20/30.jpg?blur=3"
+              data-src="https://i.picsum.photos/id/${parseInt(600+index)}/200/300.jpg" 
               alt="my-image"/>
-            </li>`
-          });
-          document.getElementById('dashboard-list').innerHTML =listItems;
-        }
-      </script>
-    </body>
+          </li>`
+        });
+        document.getElementById('dashboard-list').innerHTML =listItems;
+      }
+    </script>
+  </body>
 </html>
