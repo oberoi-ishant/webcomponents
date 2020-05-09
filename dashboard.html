@@ -13,7 +13,7 @@
       }
 
       #dashboard-list .item {
-        margin-top: 200px;
+        margin-top: 700px;
         display: block;
       }
 
@@ -25,12 +25,45 @@
   </head>
   <body>
     <div id="dashboard">
-      <ul id="dashboard-list"></ul>
+      <ul id="dashboard-list">
+        <li class="item">
+          <img 
+            is="lazy-img" 
+            class="my-image"
+            src="https://i.picsum.photos/id/500/20/30.jpg?blur=3"
+            data-src="https://i.picsum.photos/id/500/200/300.jpg" 
+            alt="my-image"/>
+        </li>
+        <li class="item">
+          <img 
+            is="lazy-img" 
+            class="my-image"
+            src="https://i.picsum.photos/id/501/20/30.jpg?blur=3"
+            data-src="https://i.picsum.photos/id/501/200/300.jpg" 
+            alt="my-image"/>
+        </li>
+        <li class="item">
+          <img 
+            is="lazy-img" 
+            class="my-image"
+            src="https://i.picsum.photos/id/602/20/30.jpg?blur=3"
+            data-src="https://i.picsum.photos/id/602/200/300.jpg" 
+            alt="my-image"/>
+        </li>
+        <li class="item">
+          <img 
+            is="lazy-img" 
+            class="my-image"
+            src="https://i.picsum.photos/id/603/20/30.jpg?blur=3"
+            data-src="https://i.picsum.photos/id/603/200/300.jpg" 
+            alt="my-image"/>
+        </li>
+      </ul>
     </div>
     <script src="customised-img.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function (evt) {
-        loadImages();
+        //loadImages();
       });
 
       function loadImages() {
